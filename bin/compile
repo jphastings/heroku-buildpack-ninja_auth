@@ -1,7 +1,7 @@
 #!/bin/sh
 # usage: bin/compile <build-dir> <cache-dir> <env-dir>
 
-NINJA_AUTH_VERSION=0.1.0
+NINJA_AUTH_VERSION=0.3.0
 
 echo "-----> Vendoring NinjaAuth"
 curl -s -L -o "$1/bin/ninja_auth" "https://github.com/jphastings/ninja_auth/releases/download/v$NINJA_AUTH_VERSION/ninja_auth_linux_amd64"
