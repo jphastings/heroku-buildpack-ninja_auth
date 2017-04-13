@@ -2,9 +2,11 @@
 # usage: bin/compile <build-dir> <cache-dir> <env-dir>
 
 NINJA_AUTH_VERSION=0.3.0
+DOWNLOAD_URL="https://github.com/jphastings/ninja_auth/releases/download/v$NINJA_AUTH_VERSION/ninja_auth_linux_amd64"
 
-echo "-----> Vendoring NinjaAuth"
-curl -s -L -o "$1/bin/ninja_auth" "https://github.com/jphastings/ninja_auth/releases/download/v$NINJA_AUTH_VERSION/ninja_auth_linux_amd64"
+echo "-----> Vendoring NinjaAuth (v$NINJA_AUTH_VERSION)"
+echo "       Downloading binaries ($DOWNLOAD_URL)"
+curl -s -L -o "$1/bin/ninja_auth" "$DOWNLOAD_URL"
 
 cat << EOF
 -----> NinjaAuth is ready! Final configuration steps:
