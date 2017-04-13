@@ -1,0 +1,18 @@
+#!/bin/sh
+# usage: bin/compile <build-dir> <cache-dir> <env-dir>
+
+NINJA_AUTH_VERSION=0.1.0
+
+echo "-----> Vendoring NinjaAuth"
+curl -s -L -o bin/ninja_auth "https://github.com/jphastings/ninja_auth/releases/download/v$NINJA_AUTH_VERSION/ninja_auth_linux_amd64"
+
+cat << EOF
+-----> NinjaAuth is ready! Final configuration steps:
+       Your Procfile's web dyno must execute bin/ninja_auth
+       as well as your web server. eg:
+
+           web: bin/ninja_auth & bundle exec rails s
+
+       Please check the Readme for setup information:
+       https://github.com/jphastings/ninja_auth#readme
+EOF

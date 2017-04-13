@@ -1,0 +1,4 @@
+#!/bin/sh
+
+# If this buildpack is included, it will be used
+exit 1
